@@ -1,0 +1,10 @@
+{
+  "name": "keystone-project",
+  "version": "1.0.0",
+  "description": "a simple keystone project with graphql",
+  "main": "index.js",
+  "repository": "https://github.com/kharioki/keystone-project",
+  "author": "kharioki",
+  "license": "MIT",
+  "private": false
+}
