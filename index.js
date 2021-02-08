@@ -1,6 +1,7 @@
 const { Keystone } = require('@keystonejs/keystone');
 const { MongooseAdapter } = require('@keystonejs/adapter-mongoose');
 const { GraphQLApp } = require('@keystonejs/app-graphql');
+const { AdminUIApp } = require('@keystonejs/app-admin-ui');
 
 const TodoSchema = require('./lists/Todo.js');
 const UserSchema = require('./lists/User.js');
@@ -14,5 +15,8 @@ keystone.createList('User', UserSchema);
 
 module.exports = {
   keystone,
-  apps: [new GraphQLApp()],
+  apps: [
+    new GraphQLApp(),
+    new AdminUIApp({ name: 'Todos', enableDefaultRoute: true }),
+  ],
 };

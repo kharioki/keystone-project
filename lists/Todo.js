@@ -1,4 +1,4 @@
-const { Text, CalendarDay, Checkbox } = require('@keystonejs/fields');
+const { Text, CalendarDay, Checkbox, Relationship } = require('@keystonejs/fields');
 
 module.exports = {
   fields: {
@@ -18,7 +18,8 @@ module.exports = {
       defaultValue: new Date().toISOString('YYYY-MM-DD').substring(0, 10), // Today's date
     },
     assignee: {
-      type: Text,
+      type: Relationship,
+      ref: 'User.tasks',
       isRequired: true,
     },
   },
